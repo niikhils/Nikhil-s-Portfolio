@@ -34,6 +34,19 @@
         }
     });
 
+    $(function() {
+		var header = $(".ms-static");
+		$(window).scroll(function() {    
+			var scroll = $(window).scrollTop();
+		
+			if (scroll >= 10) {
+				header.removeClass('ms-static').addClass("ms-fixed");
+			} else {
+				header.removeClass("ms-fixed").addClass('ms-static');
+			}
+		});
+	});
+    
     /*----------------------------- Sidebar js | Toggle Icon OnClick Open sidebar  -----------------------------------*/
     $(".ms-sidebar-toggle").on("click", function () {
         $(".ms-sidebar-overlay").fadeIn();
